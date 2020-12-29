@@ -1,6 +1,7 @@
 library pluto_inside;
 
-export 'src/helpers/pluto_change_notifier.dart';
+export 'src/extends/pluto_change_notifier.dart';
+export 'src/extends/pluto_state_with_change.dart';
 export 'src/helpers/pluto_clipboard_transformation.dart';
 export 'src/helpers/pluto_date_time_helper.dart';
 export 'src/helpers/pluto_key_manager_event.dart';
@@ -12,4 +13,3 @@ export 'src/widgets/pluto_scaled_checkbox.dart';
 export 'src/widgets/pluto_scrollbar.dart';
 export 'src/widgets/pluto_shadow_container.dart';
 export 'src/widgets/pluto_shadow_line.dart';
-export 'src/widgets/pluto_state_with_change.dart';
