@@ -69,14 +69,14 @@ abstract class PlutoStateWithChange<T extends PlutoStatefulWidget>
     }
 
     if (destructureList) {
-      if (newValue is List<dynamic>) {
-        return [...newValue] as T;
-      } else {
-        PlutoLog(
-          'Unhandled destructureList sub type on PlutoStateWithChange.',
-          type: PlutoLogType.warning,
-        );
+      if (newValue is Iterable) {
+        return newValue.toList() as T;
       }
+
+      PlutoLog(
+        'Cannot destructure newValue.',
+        type: PlutoLogType.warning,
+      );
     }
 
     return newValue;
