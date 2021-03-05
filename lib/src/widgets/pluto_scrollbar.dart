@@ -40,7 +40,7 @@ class PlutoScrollbar extends StatefulWidget {
     this.radius = defaultRadius,
     this.radiusWhileDragging = defaultRadiusWhileDragging,
     required this.child,
-  })  : assert(thickness < double.infinity),
+  })   : assert(thickness < double.infinity),
         assert(thicknessWhileDragging < double.infinity),
         assert(!isAlwaysShown ||
             (horizontalController != null || verticalController != null)),
@@ -424,7 +424,7 @@ class _ThumbPressGestureRecognizer extends LongPressGestureRecognizer {
     PointerDeviceKind? kind,
     required Object debugOwner,
     required GlobalKey customPaintKey,
-  })  : _customPaintKey = customPaintKey,
+  })   : _customPaintKey = customPaintKey,
         super(
           postAcceptSlopTolerance: postAcceptSlopTolerance,
           kind: kind,
