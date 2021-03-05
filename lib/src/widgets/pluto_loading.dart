@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PlutoLoading extends StatelessWidget {
-  final Color backgroundColor;
-  final Color indicatorColor;
-  final String indicatorText;
-  final double indicatorSize;
+  final Color? backgroundColor;
+  final Color? indicatorColor;
+  final String? indicatorText;
+  final double? indicatorSize;
 
   PlutoLoading({
     this.backgroundColor,

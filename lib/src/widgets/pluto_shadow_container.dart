@@ -16,10 +16,10 @@ class PlutoShadowContainer extends StatelessWidget {
   final Widget child;
 
   const PlutoShadowContainer({
-    Key key,
-    @required this.width,
-    @required this.height,
-    @required this.child,
+    Key? key,
+    required this.width,
+    required this.height,
+    required this.child,
     this.padding = const EdgeInsets.symmetric(
       horizontal: 10,
     ),

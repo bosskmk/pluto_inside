@@ -16,7 +16,7 @@ class PlutoChangeNotifier extends ChangeNotifier {
   }
 
   notifyListenersOnPostFrame() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       notifyListeners();
     });
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PlutoShadowLine extends StatelessWidget {
-  final Axis axis;
-  final bool reverse;
-  final Color color;
+  final Axis? axis;
+  final bool? reverse;
+  final Color? color;
 
   const PlutoShadowLine({
     this.axis,

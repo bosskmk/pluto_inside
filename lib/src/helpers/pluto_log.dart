@@ -18,7 +18,7 @@ class PlutoLog {
   PlutoLog(
     String message, {
     PlutoLogType type = PlutoLogType.info,
-    Object error,
+    Object? error,
   }) {
     developer.log(
       '[${type.toShortString()}] $message',

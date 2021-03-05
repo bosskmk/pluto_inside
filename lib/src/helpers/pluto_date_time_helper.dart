@@ -38,7 +38,7 @@ class PlutoDateTimeHelper {
 
   /// Returns the value converted from [date] to [format].
   /// If conversion fails, null is returned.
-  static DateTime parseOrNullWithFormat(String date, String format) {
+  static DateTime? parseOrNullWithFormat(String date, String format) {
     try {
       return intl.DateFormat(format).parseStrict(date);
     } catch (e) {

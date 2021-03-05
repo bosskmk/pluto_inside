@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PlutoScaledCheckbox extends StatelessWidget {
-  final bool value;
+  final bool? value;
 
-  final Function(bool changed) handleOnChanged;
+  final Function(bool? changed) handleOnChanged;
 
   final bool tristate;
 
@@ -11,14 +11,14 @@ class PlutoScaledCheckbox extends StatelessWidget {
 
   final Color unselectedColor;
 
-  final Color activeColor;
+  final Color? activeColor;
 
   final Color checkColor;
 
   const PlutoScaledCheckbox({
-    Key key,
-    @required this.value,
-    @required this.handleOnChanged,
+    Key? key,
+    required this.value,
+    required this.handleOnChanged,
     this.tristate = false,
     this.scale = 1.0,
     this.unselectedColor = Colors.black26,

@@ -9,7 +9,7 @@ void main() {
       // given
       final bool value = false;
 
-      final handleOnChanged = (bool changed) {};
+      final handleOnChanged = (bool? changed) {};
 
       // when
       await tester.pumpWidget(
@@ -32,9 +32,9 @@ void main() {
     'checkbox 를 탭하면 handleOnChanged 가 호출 되어야 한다.',
     (WidgetTester tester) async {
       // given
-      bool value = false;
+      bool? value = false;
 
-      final handleOnChanged = (bool changed) {
+      final handleOnChanged = (bool? changed) {
         value = changed;
       };
 

@@ -42,8 +42,8 @@ void main() {
       expect(text.data, 'Loading...');
       expect(coloredBox.color, Colors.white);
       expect(decoration.color, Colors.white);
-      expect(decoration.border.top.color, Colors.black);
-      expect(decoration.border.bottom.color, Colors.black);
+      expect(decoration.border!.top.color, Colors.black);
+      expect(decoration.border!.bottom.color, Colors.black);
     },
   );
 
@@ -69,8 +69,8 @@ void main() {
           find.byType(Container).evaluate().first.widget as Container;
       final decoration = container.decoration as BoxDecoration;
 
-      expect(text.style.color, Colors.red);
-      expect(decoration.border.top.color, Colors.red);
+      expect(text.style!.color, Colors.red);
+      expect(decoration.border!.top.color, Colors.red);
     },
   );
 
@@ -88,7 +88,7 @@ void main() {
     (tester) async {
       final text = find.byType(Text).evaluate().first.widget as Text;
 
-      expect(text.style.fontSize, 20.0);
+      expect(text.style!.fontSize, 20.0);
     },
   );
 }
