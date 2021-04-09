@@ -436,7 +436,7 @@ class _ThumbPressGestureRecognizer extends LongPressGestureRecognizer {
 
   @override
   bool isPointerAllowed(PointerDownEvent event) {
-    if (!_hitTestInteractive(_customPaintKey, event.position)) {
+    if (!_hitTestInteractive(_customPaintKey, event.position, event.kind)) {
       return false;
     }
     return super.isPointerAllowed(event);
@@ -446,16 +446,23 @@ class _ThumbPressGestureRecognizer extends LongPressGestureRecognizer {
 // foregroundPainter also hit tests its children by default, but the
 // scrollbar should only respond to a gesture directly on its thumb, so
 // manually check for a hit on the thumb here.
-bool _hitTestInteractive(GlobalKey customPaintKey, Offset offset) {
+bool _hitTestInteractive(
+    GlobalKey customPaintKey, Offset offset, PointerDeviceKind kind) {
   if (customPaintKey.currentContext == null) {
     return false;
   }
   final CustomPaint customPaint =
       customPaintKey.currentContext!.widget as CustomPaint;
   final ScrollbarPainter painter =
-      customPaint.foregroundPainter as ScrollbarPainter;
+      customPaint.foregroundPainter! as ScrollbarPainter;
+  final Offset localOffset = _getLocalOffset(customPaintKey, offset);
+  // We only receive track taps that are not on the thumb.
+  return painter.hitTestInteractive(localOffset, kind) &&
+      !painter.hitTestOnlyThumbInteractive(localOffset, kind);
+}
+
+Offset _getLocalOffset(GlobalKey scrollbarPainterKey, Offset position) {
   final RenderBox renderBox =
-      customPaintKey.currentContext!.findRenderObject() as RenderBox;
-  final Offset localOffset = renderBox.globalToLocal(offset);
-  return painter.hitTestInteractive(localOffset);
+      scrollbarPainterKey.currentContext!.findRenderObject()! as RenderBox;
+  return renderBox.globalToLocal(position);
 }

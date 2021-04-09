@@ -1,3 +1,9 @@
+## [1.0.0-pre.0] - 2021. 4. 9
+
+* Error correction version according to flutter version.
+  > Related links.  
+  > https://github.com/bosskmk/pluto_grid/issues/174
+
 ## [0.2.0] - 2021. 3. 5
 
 * Null safety.
