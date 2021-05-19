@@ -57,8 +57,7 @@ extension PlutoKeyManagerEventExtention on PlutoKeyManagerEvent {
 
   bool get isF2 => event!.logicalKey.keyId == LogicalKeyboardKey.f2.keyId;
 
-  bool get isCharacter =>
-      event!.logicalKey.keyLabel.isNotEmpty;
+  bool get isCharacter => event!.logicalKey.keyLabel.isNotEmpty;
 
   bool get isCtrlC {
     return isCtrlPressed &&

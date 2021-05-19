@@ -26,7 +26,8 @@ abstract class PlutoStateWithChange<T extends PlutoStatefulWidget>
 
   bool get changed => _changed;
 
-  StatefulElement? get _statefulElement => mounted ? context as StatefulElement? : null;
+  StatefulElement? get _statefulElement =>
+      mounted ? context as StatefulElement? : null;
 
   void onChange();
 
