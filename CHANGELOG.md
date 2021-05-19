@@ -1,3 +1,7 @@
+## [1.0.0] - 2021. 5. 19
+
+* Stable version.
+
 ## [1.0.0-pre.0] - 2021. 4. 9
 
 * Error correction version according to flutter version.
